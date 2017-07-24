@@ -1,0 +1,10 @@
+{
+  "id": 1,
+  "fruitName": "三斤十块！北京油桃",
+  "discountPrice": "10.00",
+  "normalPrice": "20.00",
+  "amount": 10,
+  "imgUrl": "./images/test1.jpg",
+  "info": "拍下立减",
+  "weight": "两斤"
+}

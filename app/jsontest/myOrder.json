@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "date": "2016/7/15",
+    "itemList": [
+      {
+        "fruitName": "好吃的苹果",
+        "buyAmount": 2
+      },
+      {
+        "fruitName": "超赞的西瓜",
+        "buyAmount": 3
+      }
+    ],
+    "totalPrice": "100.00",
+    "incomplete": 0
+  },
+  {
+    "id": 2,
+    "date": "2016/7/16",
+    "itemList": [
+      {
+        "fruitName": "好吃的苹果",
+        "buyAmount": 5
+      },
+      {
+        "fruitName": "超赞的西瓜",
+        "buyAmount": 10
+      },
+      {
+        "fruitName": "可爱的草莓",
+        "buyAmount": 3
+      }
+    ],
+    "totalPrice": "200.00",
+    "incomplete": 1
+  },
+  {
+    "id": 3,
+    "date": "2016/7/19",
+    "itemList": [
+      {
+        "fruitName": "凤梨",
+        "buyAmount": 2
+      },
+      {
+        "fruitName": "橘子",
+        "buyAmount": 2
+      },
+      {
+        "fruitName": "可爱的草莓",
+        "buyAmount": 3
+      }
+    ],
+    "totalPrice": "150.00",
+    "incomplete": 1
+  }
+]

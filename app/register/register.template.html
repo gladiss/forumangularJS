@@ -1,0 +1,42 @@
+
+<div id="wrap">
+    <div id="logo"><img src="images/logo1.png" width="368px" height="64px"></div>
+    <div id="title"><h3>员工内部论坛系统</h3></div>
+    <div id="form" style="z-index: 200;">
+    <form class="form" >
+        <div class="input-group register-username">
+            <span class="input-group-addon register-span" ><img src="images/person.png"></span>
+            <input id="username" ng-model="registerInfo.username" placeholder="username" class="form-control register-input" type="text">
+            <span class="glyphicon  form-control-feedback"></span>
+        </div>
+        <div class="input-group register-inputdiv">
+            <span class="input-group-addon register-span" ><img src="images/password.png"></span>
+            <input id="password" ng-model="registerInfo.password" placeholder="password" class="form-control register-input" type="password">
+        </div>
+        <div class="input-group register-inputdiv">
+            <span class="input-group-addon register-span"><img src="images/realname.png"></span>
+            <input id="realname" ng-model="registerInfo.realname" placeholder="realname" class="form-control register-input" type="text">
+        </div>
+        <div>
+
+        <div class="radio register-radio">
+                <label for="male" class="radio-inline">
+                   <input id="male" ng-model="registerInfo.gender" name="gender" type="radio" value="男"  checked>
+                    <img src="images/male.png">
+                </label>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</span>
+                <label for="female" class="radio-inline register-inline">
+                    <input id="female" ng-model="registerInfo.gender" name="gender" type="radio" value="女"  >
+                    <img src="images/female.png">
+                </label>
+            </div>
+        </div>
+        <button type="button" ng-click="mySubmit()" class="btn btn-primary register-submit">注 册</button>
+    </form>
+    </div>
+   <footer class="register-footer">
+       <p><h6>寒武纪科技有限公司</h6></p>
+       <p><h6>Copyright©2016-2017北京中科寒武纪科技有限公司</h6></p>
+   </footer>
+
+</div>

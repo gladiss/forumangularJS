@@ -1,0 +1,76 @@
+
+#wrap{
+    background: url('../images/login_bg.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    overflow:hidden;
+    width:100%;
+    height:90%;
+    z-index: -1;
+}
+#logo{
+    margin-top: 8%;
+    text-align: center;
+}
+#title {
+    color: #ffffff;
+    text-align: center;
+}
+#form {
+    width: 450px;
+    padding-bottom: 3%;
+    background-color: #ffffff;
+    margin: 0 auto;
+    margin-top: 1%;
+}
+.form{
+    width: 300px;height: 300px;margin: 0 auto; padding-top: 6%;
+}
+.register-username{
+    padding-top: 5%;
+}
+.register-inputdiv{
+    margin-top: 5%;
+}
+.register-span{
+    background-color: #ffffff;
+}
+.register-input {
+    height: 44px;
+}
+.register-radio{
+    margin-left: 25%;
+    margin-top: 5%;
+}
+.register-inline
+{
+   padding-left: 30%;
+}
+.register-submit{
+    width: 100%;
+}
+.register-footer {
+    text-align: center;
+    margin-top: 13%;
+}
+
+#login-form{
+    width:500px;padding-bottom:3%;background-color: #ffffff;margin: 0 auto;margin-top:3%;
+}
+.login{
+    width:300px;height:250px;margin: 0 auto; padding-top: 3%;
+}
+.login-username{
+    padding-top: 10%;
+}
+.login-inputdiv{
+    margin-top:10%;
+}
+.login-submit{
+    width: 100%;
+    margin-top: 10%;
+}
+.login-footer{
+    text-align: center;
+    margin-top: 13%;
+}

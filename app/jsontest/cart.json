@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "fruitName": "三斤十块！北京油桃",
+    "discountPrice": "10.00",
+    "normalPrice": "20.00",
+    "amount": 10,
+    "imgUrl": "./images/test1.jpg",
+    "buyAmount": 1
+  },
+  {
+    "id": 2,
+    "fruitName": "三斤十块！北京油桃",
+    "discountPrice": "10.00",
+    "normalPrice": "20.00",
+    "amount": 10,
+    "imgUrl": "./images/test1.jpg",
+    "buyAmount": 1
+  },
+  {
+    "id": 3,
+    "fruitName": "三斤十块！北京油桃",
+    "discountPrice": "10.00",
+    "normalPrice": "20.00",
+    "amount": 10,
+    "imgUrl": "./images/test1.jpg",
+    "buyAmount": 1
+  },
+  {
+    "id": 4,
+    "fruitName": "三斤十块！北京油桃",
+    "discountPrice": "10.00",
+    "normalPrice": "20.00",
+    "amount": 10,
+    "imgUrl": "./images/test1.jpg",
+    "buyAmount": 7
+  },
+  {
+    "id": 4,
+    "fruitName": "三斤十块！北京油桃",
+    "discountPrice": "10.00",
+    "normalPrice": "20.00",
+    "amount": 10,
+    "imgUrl": "./images/test1.jpg",
+    "buyAmount": 7
+  },
+  {
+    "id": 4,
+    "fruitName": "三斤十块！北京油桃",
+    "discountPrice": "10.00",
+    "normalPrice": "20.00",
+    "amount": 10,
+    "imgUrl": "./images/test1.jpg",
+    "buyAmount": 7
+  },
+  {
+    "id": 4,
+    "fruitName": "三斤十块！北京油桃",
+    "discountPrice": "10.00",
+    "normalPrice": "20.00",
+    "amount": 10,
+    "imgUrl": "./images/test1.jpg",
+    "buyAmount": 7
+  },
+  {
+    "id": 4,
+    "fruitName": "三斤十块！北京油桃",
+    "discountPrice": "10.00",
+    "normalPrice": "20.00",
+    "amount": 10,
+    "imgUrl": "./images/test1.jpg",
+    "buyAmount": 7
+  }
+]

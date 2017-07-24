@@ -1,0 +1,10 @@
+{
+  "id": 2,
+  "fruitName": "苹果",
+  "discountPrice": "3.00",
+  "normalPrice": "5.00",
+  "amount": 10,
+  "imgUrl": "./images/test1.jpg",
+  "info": "拍下立减",
+  "weight": "两斤"
+}

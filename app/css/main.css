@@ -1,0 +1,166 @@
+.top {
+    background-color: #02487b;
+}
+
+a{
+    color:black;
+}
+
+.Card {
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #e7eaf1;
+
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 37, 55, 0.05);
+    box-sizing: border-box;
+
+}
+
+.ForumItem {
+    position: relative;
+    padding: 16px 20px;
+}
+
+.ForumHeader {
+    line-height: 58px;
+    padding: 0 20px;
+}
+
+.header-navItem {
+    margin-right: 40px;
+    font-size: 16px;
+    color: #262626;
+    display: inline;
+}
+
+.avatar {
+
+    border-radius: 2px;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
+}
+
+.avatar-small {
+    width: 35px;
+    height: 35px;
+}
+
+.topic-user {
+    font-size: 15px;
+    color: #555555;
+    margin-top: 5px;
+}
+
+.topic-title {
+
+    font-size: 25px;
+    color: #000;
+    font-weight: 700;
+    text-decoration: none;
+
+}
+
+.topic-content {
+    margin-top: 10px;
+    color: #888888;
+
+}
+
+.topic-content blockquote {
+    font-size: 15px;
+}
+
+.topic-more-color {
+    color: #6C6351;
+}
+
+.font14 {
+    font-size: 14px;
+}
+
+.note-color {
+    color: #999;
+}
+
+.small-tag {
+    font-size: 14px;
+    background-color: #eeeeee;
+    border-radius: 3px 0 0 3px;
+    color: #999;
+    display: inline-block;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 13px 0 13px;
+    position: relative;
+    margin: 0 3px 0 0;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.small-tag::before {
+    background: #fff;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+    content: '';
+    height: 6px;
+    left: 5px;
+    position: absolute;
+    width: 6px;
+    top: 5px;
+}
+
+.small-tag::after {
+    background: #fff;
+    border-bottom: 9px solid transparent;
+    border-left: 10px solid #eee;
+    border-top: 9px solid transparent;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/*detail*/
+
+.topic-comment-container {
+    margin-top: 20px;
+    padding: 0 15px;
+}
+
+.topic-comment-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.topic-comment-time {
+    margin-left: 5px;
+    color: gray;
+}
+
+.topic-comment-main {
+    margin-left: 40px;
+}
+
+.badge {
+    padding: 2px 9px;
+
+    border-radius: 9px;
+    background-color: #999999;
+    color: white;
+    line-height: 14px;
+    font-size: 12px;
+    font-weight: 700;
+
+}
+
+.topic-comment-username{
+    font-weight: 700;
+    text-decoration:none;
+}
+
+#topic-new-container{
+    margin-top:50px;
+}
