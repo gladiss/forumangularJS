@@ -1,0 +1,78 @@
+#userInfo{
+    background: url("../images/background.png");
+    background-position: 100%,100%;
+    background-attachment: fixed;
+
+}
+.info_tilte{
+    padding-top: 3%;
+    margin-left: 10%;
+   height: 100px;
+   font-size: 32px;
+   font-weight: 500;
+}
+.userinfo {
+    margin-left: 10%;
+}
+.btn-update{
+    float: right;
+    margin-top: -2%;
+    margin-right: 5%;
+}
+#usertitle{
+    height: 7%;
+    padding-top:2%;
+    padding-left:1%;
+    font-size: 16px;
+    font-weight: 500;
+    background: #f8f8f8;
+}
+
+#info{
+    width: 96%;
+    height: 8%;
+    font-size: 18px;
+    font-weight: 400;
+    border-bottom: 2px solid #eeeeee;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-top: 28px;
+}
+.infocontent{
+    height: 500px;
+}
+.photo
+{
+    float: right;
+    margin-top: -50%;
+    margin-right: 10%;
+    width:150px;
+    height:170px;
+    text-align: center;
+}
+.users{
+    color: dimgray;
+    font-size: 18px;
+    margin-top: 3%;
+    margin-left: 10%;
+   width: 50%;
+}
+.users tr{
+    height: 70px;
+}
+.userform{
+    width: 30%;
+    margin-left: 10%;
+    margin-top: 3%;
+}
+.upt{
+    margin-left: 45px;
+    width: 62px;
+    color: blue;
+    background-color: white;
+    font-size: xx-small;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #e1e1e8;
+    margin-top: 5px;
+}
