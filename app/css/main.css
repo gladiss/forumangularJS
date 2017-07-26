@@ -1,3 +1,7 @@
+body{
+    background-color: #f7f8fa;
+}
+
 .top {
     background-color: #02487b;
 }
@@ -64,6 +68,8 @@ a{
 .topic-content {
     margin-top: 10px;
     color: #888888;
+    max-height: 200px;
+    overflow:hidden;
 
 }
 
@@ -162,5 +168,5 @@ a{
 }
 
 #topic-new-container{
-    margin-top:50px;
+    margin-top:20px;
 }
