@@ -12,6 +12,38 @@ angular.module("cambricon-forum").controller('homeController',
                 theme:"snow"
             });
             $scope.newTopic={};
+            $scope.nowTime=new Date().toISOString();
+
+            $scope.topics=[];
+
+            $scope.tmpTopics=[];
+
+            $scope.getPartialTopics=function (offset) {
+              $http.post(SERVER_URL+"/getIndex",{"offset":offset})
+                  .then(function (response) {
+                      $scope.tmpTopics=response.data;
+                      if($scope.topics.length===0){
+                          $scope.topics=$scope.tmpTopics;
+                      }else{
+                          Array.prototype.push.apply($scope.topics,$scope.tmpTopics);
+                      }
+                  }).catch(function (err) {
+                  toastr.error(error.data.err);
+              })
+            };
+            //first load
+            $scope.getPartialTopics(null);
+
+
+
+            $scope.loadMore=function () {
+                if($scope.topics.length>0){
+                    $scope.getPartialTopics($scope.topics[$scope.topics.length-1].updated_at);
+
+
+                }
+
+            };
 
             $scope.submitNewTopic=function(){
 
@@ -26,5 +58,15 @@ angular.module("cambricon-forum").controller('homeController',
                 });
 
 
+            };
+
+            /**
+             * @return {number}
+             */
+            $scope.getDateDiff=function (startDate,endDate)
+            {
+                var startTime = new Date(startDate).getTime();
+                var endTime = new Date(endDate).getTime();
+                return  parseInt(Math.abs((startTime - endTime)) / (1000 * 60 * 60 * 24));
             }
         }]);

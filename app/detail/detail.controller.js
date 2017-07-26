@@ -1,23 +1,25 @@
 "use strict";
 angular.module("cambricon-forum").controller('detailController',
-    ["$scope", "$http", "toastr", "localStorageService", "$uibModal", "$stateParams",
-        function ($scope, $http, toastr, localStorageService, $uibModal, $stateParams) {
+    ["$scope", "$http", "toastr", "localStorageService", "$uibModal", "$stateParams","$state",
+        function ($scope, $http, toastr, localStorageService, $uibModal, $stateParams,$state) {
 
             $scope.newComment={};
 
+
+            $scope.nowTime=new Date().toISOString();
             $scope.topic = {};
             $scope.username = localStorageService.get("username");
-            $scope.comment = [];
-
+            $scope.comments = [];
 
 
             $http.post(SERVER_URL + "/forum/getForumById", {"f_id": $stateParams["id"]})
                 .then(function (response) {
                     $scope.topic = response.data.forum;
-                    $scope.comment = response.data.comment;
-                    $("#topic-content").html($scope.topic.content);
+                    $scope.comments = response.data.comment;
+
 
                     $scope.newComment.f_id=$scope.topic.f_id;
+
                 })
                 .catch(function (error) {
                     toastr.error(error.data.err);
@@ -48,6 +50,16 @@ angular.module("cambricon-forum").controller('detailController',
                     });
 
 
+            };
+
+            /**
+             * @return {number}
+             */
+            $scope.getDateDiff=function (startDate,endDate)
+            {
+                var startTime = new Date(startDate).getTime();
+                var endTime = new Date(endDate).getTime();
+                return  parseInt(Math.abs((startTime - endTime)) / (1000 * 60 * 60 * 24));
             }
 
         }]);

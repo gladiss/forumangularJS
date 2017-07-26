@@ -23,6 +23,7 @@
     "angular-carousel": "^1.0.1",
     "angular-qrcode": "monospaced/angular-qrcode#^6.2.1",
     "bootstrap-select": "^1.11.0",
-    "angular-bootstrap-colorpicker": "^3.0.31"
+    "angular-bootstrap-colorpicker": "^3.0.31",
+    "angular-sanitize": "1.5.8"
   }
 }

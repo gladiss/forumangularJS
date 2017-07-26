@@ -17,7 +17,7 @@
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="topic-content" id="topic-content">
+            <div class="topic-content" id="topic-content" ng-bind-html="topic.content">
 
 
             </div>
@@ -27,7 +27,7 @@
 
 
                     <a href="" class="note-color">
-                        评论11
+                        评论{{comments.length}}
                     </a> • 浏览{{topic.visit}} &nbsp;
 
                     <a href="" class="small-tag">{{topic.category}}</a>
@@ -35,12 +35,7 @@
                     <a ng-show="topic.username==username" href="" class="note-color">编辑</a>
                 </div>
                 <div class="pull-right">
-
-                    最后评论来自
-
-                    <a href="" class="note-color">
-                        MapleFater
-                    </a> • 211 天前
+                    发表于 {{getDateDiff(topic.created_at,nowTime)}} 天前
 
                 </div>
                 <div class="clearfix">
@@ -49,57 +44,26 @@
         </div>
 
         <div class="Card topic-comment-container">
-            <div class="topic-comment-item">
+            <div class="topic-comment-item" ng-repeat="comment in comments">
                 <img class="pull-left avatar avatar-small" src="images/thumbnail50x50.jpg">
-                <div class="pull-right">
-                    <span class="badge">1楼</span>
+                <div class="pull-right" style="text-align:right">
+                    <p class="badge">{{$index}}楼</p>
+                    <p ng-show="comment.username==username"><a class="note-color">编辑</a>•<a class="note-color">删除</a></p>
                 </div>
                 <div class="topic-comment-main">
                     <div>
-                        <span><a class="topic-comment-username" href="">这里是用户名</a>:</span>
-                        <span class="topic-comment-time"><small>14天前</small></span>
+                        <span><a class="topic-comment-username" href="">{{comment.username}}</a>:</span>
+                        <span class="topic-comment-time"><small>{{getDateDiff(comment.created_at,nowTime)}}天前</small></span>
                     </div>
-                    <div>
-                        我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容
+                    <div id="topic-comment-inner-container" ng-bind-html="comment.comment">
+
                     </div>
 
                 </div>
             </div>
 
 
-            <div class="topic-comment-item">
-                <img class="pull-left avatar avatar-small" src="images/thumbnail50x50.jpg">
-                <div class="pull-right">
-                    <span class="badge">1楼</span>
-                </div>
-                <div class="topic-comment-main">
-                    <div>
-                        <span><a class="topic-comment-username" href="">这里是用户名</a>:</span>
-                        <span class="topic-comment-time"><small>14天前</small></span>
-                    </div>
-                    <div>
-                        我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容
-                    </div>
 
-                </div>
-            </div>
-
-            <div class="topic-comment-item">
-                <img class="pull-left avatar avatar-small" src="images/thumbnail50x50.jpg">
-                <div class="pull-right">
-                    <span class="badge">1楼</span>
-                </div>
-                <div class="topic-comment-main">
-                    <div>
-                        <span><a class="topic-comment-username" href="">这里是用户名</a>:</span>
-                        <span class="topic-comment-time"><small>14天前</small></span>
-                    </div>
-                    <div>
-                        我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容
-                    </div>
-
-                </div>
-            </div>
         </div>
 
         <div>

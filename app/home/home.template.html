@@ -23,24 +23,21 @@
         </div>
 
 
-        <div class="Card ForumItem">
+        <div class="Card ForumItem" ng-repeat="topic in topics">
 
             <div>
                 <div class="topic-user pull-right">
                     <img class="avatar avatar-small" src="images/thumbnail50x50.jpg">
-                    我是用户名
+                    {{topic.username}}
                 </div>
 
                 <div class="topic-title pull-left">
-                    我是标题
+                    <a ui-sref="detail({'id':topic.f_id})">{{topic.title}}</a>
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="topic-content">
-                <blockquote>
-                    Hello，各位这里是一个开放的社区，有什么问题你可以在这里尽情的讨论，包括技术，产品，小道消息......千万不要拘束。但是，凡事都有个但是，请不要恶意喷人，这里不太欢迎浑身充满负能量的人。。。...<a
-                        href="" class="topic-more-color">查看更多</a>
-                </blockquote>
+            <div class="topic-content" ng-bind-html="topic.content">
+
             </div>
 
             <div class="font14 note-color">
@@ -48,10 +45,10 @@
 
 
                     <a href="" class="note-color">
-                        评论11
-                    </a> • 浏览51 &nbsp;
+                        评论{{topic.comment_count}}
+                    </a> • 浏览{{topic.visit}} &nbsp;
 
-                    <a href="" class="small-tag">生活</a>
+                    <a href="" class="small-tag">{{topic.category}}</a>
 
                 </div>
                 <div class="pull-right">
@@ -60,7 +57,7 @@
 
                     <a href="" class="note-color">
                         MapleFater
-                    </a> • 211 天前
+                    </a> • {{getDateDiff(topic.created_at,nowTime)}} 天前
 
                 </div>
                 <div class="clearfix">
@@ -68,143 +65,10 @@
             </div>
         </div>
 
-
-        <div class="Card ForumItem">
-
-            <div>
-                <div class="topic-user pull-right">
-                    <img class="avatar avatar-small" src="images/thumbnail50x50.jpg">
-                    我是用户名
-                </div>
-
-                <div class="topic-title pull-left">
-                    我是标题
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="topic-content">
-                <blockquote>
-                    Hello，各位这里是一个开放的社区，有什么问题你可以在这里尽情的讨论，包括技术，产品，小道消息......千万不要拘束。但是，凡事都有个但是，请不要恶意喷人，这里不太欢迎浑身充满负能量的人。。。...<a
-                        href="" class="topic-more-color">查看更多</a>
-                </blockquote>
-            </div>
-
-            <div class="font14 note-color">
-                <div class="pull-left">
-
-
-                    <a href="" class="note-color">
-                        评论11
-                    </a> • 浏览51 &nbsp;
-
-                    <a href="" class="small-tag">生活</a>
-
-                </div>
-                <div class="pull-right">
-
-                    最后评论来自
-
-                    <a href="" class="note-color">
-                        MapleFater
-                    </a> • 211 天前
-
-                </div>
-                <div class="clearfix">
-                </div>
-            </div>
+        <div class="Card" style="text-align: center">
+            <button class="btn btn-default" ng-click="loadMore()">加载更多</button>
         </div>
 
-
-        <div class="Card ForumItem">
-
-            <div>
-                <div class="topic-user pull-right">
-                    <img class="avatar avatar-small" src="images/thumbnail50x50.jpg">
-                    我是用户名
-                </div>
-
-                <div class="topic-title pull-left">
-                    我是标题
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="topic-content">
-                <blockquote>
-                    Hello，各位这里是一个开放的社区，有什么问题你可以在这里尽情的讨论，包括技术，产品，小道消息......千万不要拘束。但是，凡事都有个但是，请不要恶意喷人，这里不太欢迎浑身充满负能量的人。。。...<a
-                        href="" class="topic-more-color">查看更多</a>
-                </blockquote>
-            </div>
-
-            <div class="font14 note-color">
-                <div class="pull-left">
-
-
-                    <a href="" class="note-color">
-                        评论11
-                    </a> • 浏览51 &nbsp;
-
-                    <a href="" class="small-tag">生活</a>
-
-                </div>
-                <div class="pull-right">
-
-                    最后评论来自
-
-                    <a href="" class="note-color">
-                        MapleFater
-                    </a> • 211 天前
-
-                </div>
-                <div class="clearfix">
-                </div>
-            </div>
-        </div>
-
-
-        <div class="Card ForumItem">
-
-            <div>
-                <div class="topic-user pull-right">
-                    <img class="avatar avatar-small" src="images/thumbnail50x50.jpg">
-                    我是用户名
-                </div>
-
-                <div class="topic-title pull-left">
-                    我是标题
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="topic-content">
-                <blockquote>
-                    Hello，各位这里是一个开放的社区，有什么问题你可以在这里尽情的讨论，包括技术，产品，小道消息......千万不要拘束。但是，凡事都有个但是，请不要恶意喷人，这里不太欢迎浑身充满负能量的人。。。...<a
-                        href="" class="topic-more-color">查看更多</a>
-                </blockquote>
-            </div>
-
-            <div class="font14 note-color">
-                <div class="pull-left">
-
-
-                    <a href="" class="note-color">
-                        评论11
-                    </a> • 浏览51 &nbsp;
-
-                    <a href="" class="small-tag">生活</a>
-
-                </div>
-                <div class="pull-right">
-
-                    最后评论来自
-
-                    <a href="" class="note-color">
-                        MapleFater
-                    </a> • 211 天前
-
-                </div>
-                <div class="clearfix">
-                </div>
-            </div>
-        </div>
 
 
         <div class="Card" id="topic-new-container" style="padding:10px">
