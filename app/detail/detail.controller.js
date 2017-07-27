@@ -111,7 +111,34 @@ angular.module("cambricon-forum").controller('detailController',
                         toastr.error(error.data.err);
                     });
 
+            };
+
+
+            $scope.openTopicEditor=function (topic) {
+                var modalInstance = $uibModal.open({
+                    animation: true,
+                    templateUrl: '/topicEditor/topicEditor.template.html',
+                    controller: 'topicEditorController',
+                    size: "lg",
+                    resolve: {
+                        items: function () {
+                            return topic;
+                        }
+                    }
+                });
+
+                modalInstance.result.then(function (item) {
+                    if(item==="delete"){
+                        $state.go("home");
+                    }else if(item==="modify"){
+                        $scope.getTopicDetail();
+                    }
+                    //toastr.info("请不要忘记保存修改!");
+                }, function () {
+                    //alert('Modal dismissed at: ' + new Date());
+                });
             }
+
 
         }]);
 

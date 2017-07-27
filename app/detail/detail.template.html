@@ -8,7 +8,7 @@
 
             <div>
                 <div class="topic-user pull-right">
-                    <img class="avatar avatar-small" src="images/thumbnail50x50.jpg">
+                    <img class="avatar avatar-small" ng-src="{{topic.user_img}}">
                     <a ui-sref="userInfo({'username':topic.username})">{{topic.username}}</a>
                 </div>
 
@@ -32,7 +32,7 @@
 
                     <a href="" class="small-tag">{{topic.category}}</a>
 
-                    <a ng-show="topic.username==username" href="" class="note-color">编辑</a>
+                    <a ng-show="topic.username==username" ng-click="openTopicEditor(topic)" class="note-color">编辑</a>
                 </div>
                 <div class="pull-right">
                     发表于 {{getDateDiff(topic.created_at,nowTime)}} 天前
@@ -45,7 +45,7 @@
 
         <div class="Card topic-comment-container">
             <div class="topic-comment-item" ng-repeat="comment in comments">
-                <img class="pull-left avatar avatar-small" src="images/thumbnail50x50.jpg">
+                <img class="pull-left avatar avatar-small" ng-src="{{comment.user_img}}">
                 <div class="pull-right" style="text-align:right">
                     <p class="badge">{{$index}}楼</p>
                     <p ng-show="comment.username==username" style="cursor: pointer;">

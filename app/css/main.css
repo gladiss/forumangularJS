@@ -68,9 +68,13 @@ a{
 .topic-content {
     margin-top: 10px;
     color: #888888;
-    max-height: 200px;
+
     overflow:hidden;
 
+}
+
+.home-topic-content{
+    max-height: 200px;
 }
 
 .topic-content blockquote {
@@ -169,4 +173,22 @@ a{
 
 #topic-new-container{
     margin-top:20px;
+}
+
+.nav>li>a:focus, .nav>li>a:hover{
+    background-color: royalblue;
+}
+
+.Button-Blue{
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: 1px solid #0f88eb;
+    transition: opacity .3s ease,transform .3s ease,-webkit-transform .3s ease;
+    line-height: 30px;
+    padding: 0 14px;
+    background: #0f88eb;
+    color: #fff;
+
 }

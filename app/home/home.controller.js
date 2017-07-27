@@ -3,17 +3,10 @@
 angular.module("cambricon-forum").controller('homeController',
     ["$scope", "$http", "toastr", "localStorageService", "$uibModal","$state",
         function ($scope, $http, toastr, localStorageService, $uibModal,$state) {
-            $scope.quill = new Quill('#topic-new-editor', {
-                modules: {
-                    toolbar: {
-                        container: '#topic-new-toolbar'
-                    }
-                },
-                theme:"snow"
-            });
-            $scope.newTopic={};
-            $scope.nowTime=new Date().toISOString();
 
+
+            $scope.nowTime=new Date().toISOString();
+            $scope.username = localStorageService.get("username");
             $scope.topics=[];
 
             $scope.tmpTopics=[];
@@ -45,20 +38,7 @@ angular.module("cambricon-forum").controller('homeController',
 
             };
 
-            $scope.submitNewTopic=function(){
 
-                $scope.newTopic.content=$scope.quill.root.innerHTML;
-                $http.post(SERVER_URL+"/forum/createForum",$scope.newTopic)
-                .then(function(response){
-                    toastr.info("发表成功");
-                    $state.go("detail",{"id":response.data.f_id});
-                })
-                .catch(function(error){
-                    toastr.error(error.data.err);
-                });
-
-
-            };
 
             /**
              * @return {number}
@@ -68,5 +48,28 @@ angular.module("cambricon-forum").controller('homeController',
                 var startTime = new Date(startDate).getTime();
                 var endTime = new Date(endDate).getTime();
                 return  parseInt(Math.abs((startTime - endTime)) / (1000 * 60 * 60 * 24));
+            };
+
+            $scope.openTopicEditor=function (topic) {
+                var modalInstance = $uibModal.open({
+                    animation: true,
+                    templateUrl: '/topicEditor/topicEditor.template.html',
+                    controller: 'topicEditorController',
+                    size: "lg",
+                    resolve: {
+                        items: function () {
+                            return topic;
+                        }
+                    }
+                });
+
+                modalInstance.result.then(function (item) {
+                    if(item==="delete" || item==="modify"){
+                        $state.go("home",null,{"reload":true});
+                    }
+                    //toastr.info("请不要忘记保存修改!");
+                }, function () {
+                    //alert('Modal dismissed at: ' + new Date());
+                });
             }
         }]);

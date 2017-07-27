@@ -20,6 +20,12 @@
 
                 分类3
             </div>
+
+            <div class="pull-right">
+                <button class="Button-Blue" ng-click="openTopicEditor()">
+                    发帖
+                </button>
+            </div>
         </div>
 
 
@@ -27,7 +33,7 @@
 
             <div>
                 <div class="topic-user pull-right">
-                    <img class="avatar avatar-small" src="images/thumbnail50x50.jpg">
+                    <img class="avatar avatar-small" ng-src="{{topic.user_img}}">
                     {{topic.username}}
                 </div>
 
@@ -36,7 +42,7 @@
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="topic-content" ng-bind-html="topic.content">
+            <div class="topic-content home-topic-content" ng-bind-html="topic.content">
 
             </div>
 
@@ -50,6 +56,7 @@
 
                     <a href="" class="small-tag">{{topic.category}}</a>
 
+                    <a ng-show="topic.username==username" ng-click="openTopicEditor(topic)" class="note-color">编辑</a>
                 </div>
                 <div class="pull-right">
 
@@ -69,75 +76,6 @@
             <button class="btn btn-default" ng-click="loadMore()">加载更多</button>
         </div>
 
-
-
-        <div class="Card" id="topic-new-container" style="padding:10px">
-            <p style="font-size:20px">发表主题</p>
-            <div class=" col-md-9">
-
-                <input type="text" class="form-control" ng-model="newTopic.title" placeholder="标题">
-            </div>
-            <div class="col-md-3">
-
-                <select class="form-control" ng-model="newTopic.category">
-                    <option >分类1</option>
-                    <option>分类2</option>
-                </select>
-            </div>
-
-            <div class="clearfix" style="margin-bottom:10px"></div>
-
-            <div>
-                <div id="topic-new-toolbar">
-
-<span class="ql-formats">
-<select class="ql-font">
-<option selected=""></option>
-<option value="serif"></option>
-<option value="monospace"></option>
-</select>
-<select class="ql-size">
-<option value="small"></option>
-<option selected=""></option>
-<option value="large"></option>
-<option value="huge"></option>
-</select>
-</span>
-                    <span class="ql-formats">
-<button class="ql-bold"></button>
-<button class="ql-italic"></button>
-<button class="ql-underline"></button>
-<button class="ql-strike"></button>
-</span>
-                    <span class="ql-formats">
-<select class="ql-color"></select>
-<select class="ql-background"></select>
-</span>
-                    <span class="ql-formats">
-<button class="ql-list" value="ordered"></button>
-<button class="ql-list" value="bullet"></button>
-<select class="ql-align">
-<option selected=""></option>
-<option value="center"></option>
-<option value="right"></option>
-<option value="justify"></option>
-</select>
-</span>
-                    <span class="ql-formats">
-<button class="ql-link"></button>
-<button class="ql-image"></button>
-</span>
-
-                </div>
-                <div id="topic-new-editor" style="height: 200px;"></div>
-
-                <div style="text-align:center;margin-top: 10px">
-                    <input class="btn btn-default" type="button" ng-click="submitNewTopic()" value="发表新帖">
-
-
-                </div>
-            </div>
-        </div>
 
     </div>
 
