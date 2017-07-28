@@ -1,7 +1,8 @@
 <div class="container">
 
 
-    <div class="col-md-8 ">
+    <div class="col-md-8" on-scroll-to-bottom="loadMore()">
+
 
 
         <div class="Card ForumHeader">
@@ -34,7 +35,7 @@
             <div>
                 <div class="topic-user pull-right">
                     <img class="avatar avatar-small" ng-src="{{topic.user_img}}">
-                    {{topic.username}}
+                    <a ui-sref="userInfo({'username':topic.username})">{{topic.username}}</a>
                 </div>
 
                 <div class="topic-title pull-left">
@@ -50,13 +51,13 @@
                 <div class="pull-left">
 
 
-                    <a href="" class="note-color">
+                    <a ui-sref="detail({'id':topic.f_id})" class="note-color">
                         评论{{topic.comment_count}}
                     </a> • 浏览{{topic.visit}} &nbsp;
 
                     <a href="" class="small-tag">{{topic.category}}</a>
 
-                    <a ng-show="topic.username==username" ng-click="openTopicEditor(topic)" class="note-color">编辑</a>
+                    <a href="" ng-show="topic.username==username" ng-click="openTopicEditor(topic)" class="note-color">编辑</a>
                 </div>
                 <div class="pull-right">
 
