@@ -4,7 +4,7 @@ angular.module("cambricon-forum").controller('detailController',
         function ($scope, $http, toastr, localStorageService, $uibModal, $stateParams,$state) {
 
             $scope.changeableComment={};
-
+            $scope.infoSideBarTemplate="infoSideBar/infoSideBar.template.html";
 
             $scope.nowTime=new Date().toISOString();
             $scope.topic = {};

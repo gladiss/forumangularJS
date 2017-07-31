@@ -192,3 +192,24 @@ a{
     color: #fff;
 
 }
+
+.announce-item,.infoSideBar-user{
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.infoSideBar-user{
+    font-weight: 500;
+    line-height: 1.1;
+    font-size: 30px;
+}
+
+.announce-item-main{
+    margin-top: 5px;
+}
+
+.margin-navbar{
+    margin-bottom: 25px;
+}

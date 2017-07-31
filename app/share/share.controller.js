@@ -3,7 +3,10 @@ angular.module("cambricon-forum").controller('shareController',
     ["$scope", "$http", "toastr", "localStorageService", "$uibModal", "$stateParams", "$state","Upload",
         function ($scope, $http, toastr, localStorageService, $uibModal, $stateParams, $state,Upload) {
             $scope.serverurl=SERVER_URL;
+
+            $scope.username=localStorageService.get("username");
             $scope.downloads=[];
+            $scope.hotFiles=[];
             $scope.getDownloadList = function () {
                 $http.post(SERVER_URL + "/file/getFileList", {})
                     .then(function (response) {
@@ -15,33 +18,47 @@ angular.module("cambricon-forum").controller('shareController',
 
             };
 
-            $scope.getDownloadList();
 
-
-            $scope.newFile={};
-
-            $scope.upload = function (file) {
-                $scope.newFile.file=file;
-
-
-                Upload.upload({
-                    url: SERVER_URL+'/file/upload',
-                    data: $scope.newFile
-                }).then(function (resp) {
-                    toastr.info("上传成功");
-                    $scope.getDownloadList();
-                    //console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
-                }, function (resp) {
-                    //console.log('Error status: ' + resp.status);
-                }, function (evt) {
-                    //var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-                    //console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
-                });
-
-
+            $scope.getHotFiles = function () {
+                $http.post(SERVER_URL + "/file/getHotFiles", {})
+                    .then(function (response) {
+                        $scope.hotFiles=response.data;
+                    })
+                    .catch(function (error) {
+                        toastr.error(error.data.err);
+                    });
 
             };
 
+
+            $scope.getDownloadList();
+            $scope.getHotFiles();
+
+
+
+
+            $scope.openFileEditor=function (file) {
+                var modalInstance = $uibModal.open({
+                    animation: true,
+                    templateUrl: '/shareEditor/shareEditor.template.html',
+                    controller: 'shareEditorController',
+                    size: "lg",
+                    resolve: {
+                        items: function () {
+                            return file;
+                        }
+                    }
+                });
+
+                modalInstance.result.then(function (item) {
+                    if(item==="delete" || item==="modify"){
+                        //$state.go("home",null,{"reload":true});
+                    }
+                    //toastr.info("请不要忘记保存修改!");
+                }, function () {
+                    //alert('Modal dismissed at: ' + new Date());
+                });
+            }
 
         }]);
 

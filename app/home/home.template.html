@@ -1,8 +1,8 @@
 <div class="container">
 
+    <div class="margin-navbar"></div>
 
     <div class="col-md-8" on-scroll-to-bottom="loadMore()">
-
 
 
         <div class="Card ForumHeader">
@@ -61,36 +61,19 @@
                 </div>
                 <div class="pull-right">
 
-                    最后评论来自
-
-                    <a href="" class="note-color">
-                        MapleFater
-                    </a> • {{getDateDiff(topic.created_at,nowTime)}} 天前
-
+                    发表于 {{getDateDiff(topic.created_at,nowTime)}} 天前
                 </div>
                 <div class="clearfix">
                 </div>
             </div>
         </div>
 
-        <div style="text-align: center">
-            <button class="btn btn-default" ng-click="loadMore()">加载更多</button>
-        </div>
+        <div style="margin-bottom: 30px"></div>
 
 
     </div>
 
-    <div class="col-md-4 my-navbar-right">
-        <div class="Card">
-            这里是个登录信息框
-        </div>
-
-        <div class="Card ForumItem">
-            <div class="topic-title">
-                这里是公告
-            </div>
-
-        </div>
+    <div class="col-md-4 my-navbar-right" ng-include="infoSideBarTemplate">
 
 
     </div>
