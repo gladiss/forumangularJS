@@ -154,7 +154,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/registerlogin.css">
     <link rel="stylesheet" href="css/userInfo.css">
-
+    <link rel="stylesheet" href="css/share.css">
 
     <!-- endbuild -->
 
@@ -174,6 +174,7 @@
     <script src="bower/angular-loading-bar/build/loading-bar.min.js"></script>
     <script src="bower/angular-local-storage/dist/angular-local-storage.min.js"></script>
     <script src="bower/angular-carousel/dist/angular-carousel.min.js"></script>
+    <script src="bower/ng-file-upload/ng-file-upload.min.js"></script>
     <script src="js/qrcode.js"></script>
     <script src="bower/angular-qrcode/angular-qrcode.js"></script>
     <script src="bower/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
@@ -187,6 +188,8 @@
     <script src="register/register.controller.js"></script>
     <script src="detail/detail.controller.js"></script>
     <script src="userInfo/userinfo.controller.js"></script>
+    <script src="topicEditor/topicEditor.controller.js"></script>
+    <script src="share/share.controller.js"></script>
 
     <script src="app.config.js"></script>
     <!--test-->
@@ -215,8 +218,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
 
-                <li><a href="#" style="color:white">帖子列表</a></li>
-
+                <li><a ui-sref="home" style="color:white">帖子列表</a></li>
+                <li><a ui-sref="share" style="color:white">文件分享</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

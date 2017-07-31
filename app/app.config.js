@@ -58,10 +58,10 @@ angular.module("cambricon-forum").config(["$stateProvider", "$urlRouterProvider"
             params: {
                 reset: 1
             }
-        }).state("myOrder", {
-            url: "/myOrder",
-            templateUrl: "myOrder/myOrder.template.html",
-            controller: "myOrderController"
+        }).state("share", {
+            url: "/share",
+            templateUrl: "share/share.template.html",
+            controller: "shareController"
         }).state("makeOrder", {
             url: "/makeOrder",
             templateUrl: "makeOrder/makeOrder.template.html",

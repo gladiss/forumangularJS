@@ -2,3 +2,5 @@
 platforms/
 node_modules/
 /app/bower/
+dist/
+.idea/

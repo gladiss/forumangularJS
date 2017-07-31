@@ -1,14 +1,14 @@
 <div class="container">
     <div style="margin-bottom: 30px"></div>
 
-    <div class="col-md-8 ">
+    <div class="col-md-8" style="margin-bottom: 10px">
 
 
         <div class="Card ForumItem">
 
             <div>
                 <div class="topic-user pull-right">
-                    <img class="avatar avatar-small" src="images/thumbnail50x50.jpg">
+                    <img class="avatar avatar-small" ng-src="{{topic.user_img}}">
                     <a ui-sref="userInfo({'username':topic.username})">{{topic.username}}</a>
                 </div>
 
@@ -17,7 +17,7 @@
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="topic-content" id="topic-content" ng-bind-html="topic.content">
+            <div class="topic-content" id="topic-content" ng-bind-html="topic.content" style="min-height: 20px">
 
 
             </div>
@@ -32,7 +32,7 @@
 
                     <a href="" class="small-tag">{{topic.category}}</a>
 
-                    <a ng-show="topic.username==username" href="" class="note-color">编辑</a>
+                    <a ng-show="topic.username==username" ng-click="openTopicEditor(topic)" class="note-color">编辑</a>
                 </div>
                 <div class="pull-right">
                     发表于 {{getDateDiff(topic.created_at,nowTime)}} 天前
@@ -45,17 +45,20 @@
 
         <div class="Card topic-comment-container">
             <div class="topic-comment-item" ng-repeat="comment in comments">
-                <img class="pull-left avatar avatar-small" src="images/thumbnail50x50.jpg">
+                <img class="pull-left avatar avatar-small" ng-src="{{comment.user_img}}">
                 <div class="pull-right" style="text-align:right">
                     <p class="badge">{{$index}}楼</p>
-                    <p ng-show="comment.username==username"><a class="note-color">编辑</a>•<a class="note-color">删除</a></p>
+                    <p ng-show="comment.username==username" style="cursor: pointer;">
+                        <a class="note-color" ng-click="editComment(comment)">编辑</a>•
+                        <a class="note-color" ng-click="deleteComment(comment.c_id)">删除</a>
+                    </p>
                 </div>
                 <div class="topic-comment-main">
                     <div>
-                        <span><a class="topic-comment-username" href="">{{comment.username}}</a>:</span>
+                        <span><a class="topic-comment-username" ui-sref="userInfo({'username':comment.username})">{{comment.username}}</a>:</span>
                         <span class="topic-comment-time"><small>{{getDateDiff(comment.created_at,nowTime)}}天前</small></span>
                     </div>
-                    <div id="topic-comment-inner-container" ng-bind-html="comment.comment">
+                    <div id="topic-comment-inner-container" ng-bind-html="comment.comment" style="min-height: 20px">
 
                     </div>
 
@@ -66,8 +69,11 @@
 
         </div>
 
-        <div>
-            <div><h3>发表回复</h3></div>
+        <div class="Card" style="padding:0 10px 10px 10px">
+            <div>
+                <h2 ng-show="status.edit===false">发表回复</h2>
+                <h2 ng-show="status.edit===true">修改回复</h2>
+            </div>
             <div id="topic-new-toolbar">
 
 <span class="ql-formats">
@@ -112,7 +118,11 @@
             <div id="topic-new-editor" style="height: 200px;"></div>
 
             <div style="text-align:center; margin-top: 10px">
-                <input class="btn btn-default" type="button" ng-click="submitNewComment()" value="发表回复">
+                <input ng-show="status.edit===false" class="btn btn-default" type="button" ng-click="submitComment()" value="发表回复">
+                <div ng-show="status.edit===true">
+                    <input  class="btn btn-primary" type="button" ng-click="submitComment()" value="提交">
+                    <input  class="btn btn-default" type="button" ng-click="status.edit=false" value="取消">
+                </div>
 
 
             </div>
