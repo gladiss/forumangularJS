@@ -15,11 +15,12 @@ angular.module("cambricon-forum").controller('homeController',
               $http.post(SERVER_URL+"/getIndex",{"offset":offset})
                   .then(function (response) {
                       $scope.tmpTopics=response.data;
-                      if($scope.topics.length===0){
+                      Array.prototype.push.apply($scope.topics,$scope.tmpTopics);
+                      /*if($scope.topics.length===0){
                           $scope.topics=$scope.tmpTopics;
                       }else{
                           Array.prototype.push.apply($scope.topics,$scope.tmpTopics);
-                      }
+                      }*/
                   }).catch(function (err) {
                   toastr.error(error.data.err);
               })
