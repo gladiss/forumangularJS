@@ -1,5 +1,5 @@
 <div class="container">
-    <div style="margin-bottom: 30px"></div>
+    <div class="margin-navbar"></div>
 
     <div class="col-md-8" style="margin-bottom: 10px">
 
@@ -66,7 +66,6 @@
             </div>
 
 
-
         </div>
 
         <div class="Card" style="padding:0 10px 10px 10px">
@@ -118,10 +117,11 @@
             <div id="topic-new-editor" style="height: 200px;"></div>
 
             <div style="text-align:center; margin-top: 10px">
-                <input ng-show="status.edit===false" class="btn btn-default" type="button" ng-click="submitComment()" value="发表回复">
+                <input ng-show="status.edit===false" class="btn btn-default" type="button" ng-click="submitComment()"
+                       value="发表回复">
                 <div ng-show="status.edit===true">
-                    <input  class="btn btn-primary" type="button" ng-click="submitComment()" value="提交">
-                    <input  class="btn btn-default" type="button" ng-click="status.edit=false" value="取消">
+                    <input class="btn btn-primary" type="button" ng-click="submitComment()" value="提交">
+                    <input class="btn btn-default" type="button" ng-click="status.edit=false" value="取消">
                 </div>
 
 
@@ -130,18 +130,10 @@
     </div>
 
 
-    <div class="col-md-4 my-navbar-right">
-        <div class="Card">
-            这里是个登录信息框
-        </div>
-
-        <div class="Card ForumItem">
-            <div class="topic-title">
-                这里是公告
-            </div>
-
-        </div>
+    <div class="col-md-4 my-navbar-right" ng-include="infoSideBarTemplate">
 
 
     </div>
+
+
 </div>

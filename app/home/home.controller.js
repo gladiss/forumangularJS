@@ -4,6 +4,7 @@ angular.module("cambricon-forum").controller('homeController',
     ["$scope", "$http", "toastr", "localStorageService", "$uibModal","$state",
         function ($scope, $http, toastr, localStorageService, $uibModal,$state) {
 
+            $scope.infoSideBarTemplate="infoSideBar/infoSideBar.template.html";
 
             $scope.nowTime=new Date().toISOString();
             $scope.username = localStorageService.get("username");
