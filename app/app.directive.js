@@ -2,7 +2,7 @@
 
 //app.directive
 
-angular.module("cambricon-forum").directive('onScrollToBottom', ["$document",function ($document) {
+angular.module("cambricon-forum").directive('onScrollToBottom', ["$document", function ($document) {
     //This function will fire an event when the container/document is scrolled to the bottom of the page
     return {
         restrict: 'A',

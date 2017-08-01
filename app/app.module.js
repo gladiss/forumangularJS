@@ -11,3 +11,20 @@ angular.module("cambricon-forum",
 //CONST
 var SERVER_URL = "http://118.89.103.204:3000";
 var ONLINE_MODE = true;
+
+angular.module("cambricon-forum").controller('appController',
+    ["$scope",
+        function ($scope) {
+
+            var getLoginPartial = function () {
+                var random = Math.random();
+                return "loginPartial/loginPartial.template.html?r=" + random;
+            };
+            $scope.loginPartial = getLoginPartial();
+
+            $scope.$on('userStateChange', function () {
+                $scope.loginPartial = getLoginPartial();
+            });
+
+
+        }]);
