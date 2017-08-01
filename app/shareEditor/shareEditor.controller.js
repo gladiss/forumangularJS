@@ -68,7 +68,7 @@ angular.module('cambricon-forum').controller('shareEditorController',
             };
 
             $scope.deleteFile=function(){
-                $http.post(SERVER_URL+"/forum/deleteForum",$scope.file)
+                $http.post(SERVER_URL+"/file/deleteFile",$scope.file)
                     .then(function(response){
                         toastr.info("删除成功");
                         $uibModalInstance.close("delete");
