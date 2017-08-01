@@ -18,7 +18,8 @@
   "scripts": {
     "postinstall": "bower install",
     "prestart": "npm install",
-    "start": "http-server ./app -a 0.0.0.0 -p 9001 -c-1"
+    "start": "http-server ./app -a 0.0.0.0 -p 9001 -c-1",
+    "sync":"browser-sync start --server 'app' --files 'app'"
   },
   "dependencies": {}
 }

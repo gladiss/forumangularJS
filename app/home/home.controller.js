@@ -14,20 +14,22 @@ angular.module("cambricon-forum").controller('homeController',
 
             $scope.getPartialTopics=function (offset) {
               $http.post(SERVER_URL+"/getIndex",{"offset":offset})
-                  .then(function (response) {
-                      $scope.tmpTopics=response.data;
-                      Array.prototype.push.apply($scope.topics,$scope.tmpTopics);
-                      /*if($scope.topics.length===0){
-                          $scope.topics=$scope.tmpTopics;
-                      }else{
-                          Array.prototype.push.apply($scope.topics,$scope.tmpTopics);
-                      }*/
-                  }).catch(function (err) {
-                  toastr.error(error.data.err);
-              })
-            };
+                .then(function (response) {
+                    $scope.tmpTopics=response.data;
+                    Array.prototype.push.apply($scope.topics,$scope.tmpTopics);
+                    /*if($scope.topics.length===0){
+                        $scope.topics=$scope.tmpTopics;
+                    }else{
+                        Array.prototype.push.apply($scope.topics,$scope.tmpTopics);
+                    }*/
+                }).catch(function (err) {
+                    toastr.error(error.data.err);
+                })
+        };
             //first load
             $scope.getPartialTopics(null);
+
+
 
 
 
@@ -74,4 +76,6 @@ angular.module("cambricon-forum").controller('homeController',
                     //alert('Modal dismissed at: ' + new Date());
                 });
             }
+
+
         }]);

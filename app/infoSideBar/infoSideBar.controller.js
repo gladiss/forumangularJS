@@ -41,8 +41,16 @@ angular.module("cambricon-forum").controller('infoSideBarController',
 
             $scope.getUserState();
 
-
-
+            $scope.announcements=[];
+            $scope.getAnnouncement=function () {
+                $http.post(SERVER_URL+"/getAnnouncement",{})
+                    .then(function (response) {
+                        $scope.announcements=response.data;
+                    }).catch(function (err) {
+                    toastr.error(error.data.err);
+                })
+            }
+            $scope.getAnnouncement();
 
 
         }]);
