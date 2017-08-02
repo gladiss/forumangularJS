@@ -1,0 +1,62 @@
+<link type="text/css" rel="stylesheet" href="css/shareDetail.css">
+
+
+<div class="container shareDetailContainer">
+    <div class="col-md-8 sharing">
+        <div class="sharingtitle">分享 > {{fileDetail.title}}</div>
+        <div>
+            <div style="float: left;margin: 5px">
+                <img style="width: 120px;height: 120px" src="栗山未来.png">
+                <div style="color: #999;font-size: 12px;margin-top: 10px">下载次数 {{fileDetail.download_times}}</div>
+            </div>
+            <div style="min-width: 80px;">
+                <div>
+                    <div class="sharingfloat">
+                        <img style="width: 35px;height: 35px;margin-right: 5px"
+                             ng-src="{{fileDetail.user.user_img}}">
+                    </div>
+                    <span style="font-size: 16px ;"><strong>{{fileDetail.title}}</strong></span>
+                </div>
+                <div style="margin-top:5px;">{{fileDetail.originalname}}</div>
+                <div style="margin: 20px; font-size:12px;height: 34px;overflow: hidden;min-width:100px;display: block;float: none">
+                    {{fileDetail.comment}}
+                </div>
+                <div class="share-detial-download">
+
+                    <div class="btn-download">
+                        <a ng-href="{{serverurl}}/file/download?_id={{fileDetail._id}}">下载</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-4 bar">
+        <div class="praise">
+            <div class="title">他们觉得很赞</div>
+            <table>
+                <tbody>
+                <tr>
+                    <td>
+                        <div><a href="栗山未来.png"><img style="width: 35px;height: 35px" src="栗山未来.png"></a></div>
+                        <p style="font-size: 8px;margin-right: 8px">栗山未来</p>
+                    </td>
+                    <td>
+                        <div><a href="栗山未来.png"><img style="width: 35px;height: 35px" src="栗山未来.png"></a></div>
+                        <p style="font-size: 8px;margin-right: 8px">栗山未来</p>
+                    </td>
+                    <td>
+                        <div><a href="栗山未来.png"><img style="width: 35px;height: 35px" src="栗山未来.png"></a></div>
+                        <p style="font-size: 8px;margin-right: 8px">栗山未来</p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="interesting">
+            <div class="title">你可能感兴趣</div>
+            <div style="margin: 10px">就是你感兴趣的东西</div>
+        </div>
+    </div>
+</div>

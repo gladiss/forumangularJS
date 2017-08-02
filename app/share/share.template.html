@@ -25,7 +25,8 @@
             <div style="float: left"><img style="width: 135px;height: 135px" src="images/readme.png"></div>
             <div>
                 <div style="margin-bottom: 10px;max-height: 25px; overflow: hidden;">
-                    <div><a style="font-size: 18px;" ng-href="{{serverurl}}/file/download?_id={{download._id}}">{{download.title}}</a>
+                    <div>
+                        <a style="font-size: 18px;" ui-sref="shareDetail({'_id':download._id})">{{download.title}}</a>
                     </div>
 
                 </div>
@@ -48,3 +49,4 @@
         </div>
 
     </div>
+</div>
