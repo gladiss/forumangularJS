@@ -11,6 +11,7 @@ angular.module("cambricon-forum").controller('shareController',
                 $http.post(SERVER_URL + "/file/getFileList", {})
                     .then(function (response) {
                             $scope.downloads=response.data;
+
                     })
                     .catch(function (error) {
                         toastr.error(error.data.err);
