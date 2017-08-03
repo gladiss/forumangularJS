@@ -1,0 +1,52 @@
+<div class="container share-container animated fadeIn">
+    <div class="margin-navbar"></div>
+
+
+    <div class="col-md-3 bar">
+        <div class="share">
+            <div class="tit"><strong>资源分享</strong></div>
+            <div class="sharetxt">分享你认为有价值的资源，类型不限，文件大小上限为100M。别人下载你的分享需要花费一定的金币。</div>
+
+            <button class="btn btn-primary share-upload-button" ng-click="openFileEditor()">上传</button>
+        </div>
+        <div class="classify">
+            <div class="tit"><strong>热门下载排行</strong></div>
+            <div class="liktit" ng-repeat="hotFile in hotFiles">
+                <a>{{hotFile.title}}</a>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-9 recommend">
+        <div class="recommend2">
+            <div class="tit"><strong>推荐</strong></div>
+        </div>
+        <div class="col-md-6 recommendZ" ng-repeat="download in downloads">
+            <div style="float: left"><img style="width: 135px;height: 135px" src="images/readme.png"></div>
+            <div>
+                <div style="margin-bottom: 10px;max-height: 25px; overflow: hidden;">
+                    <div>
+                        <a style="font-size: 18px;" ui-sref="shareDetail({'_id':download._id})">{{download.title}}</a>
+                    </div>
+
+                </div>
+                <div>
+
+                    {{download.originalname}}
+
+                </div>
+
+                <div style="font-size: 12px;margin-bottom:8px ;height: 34px;overflow: hidden  ">{{download.comment}}
+                </div>
+                <div style="margin-bottom: 5px">
+                    <img style="width: 35px;height: 35px;" ng-src="{{download.user.user_img}}">
+                    <span style="margin-left: 5px">{{download.username}}</span>
+                    <a ng-show="download.username===username" style="float:right;margin-top: 8px;cursor: pointer;"
+                       ng-click="openFileEditor(download)"> 编辑</a>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div ng-controller="infoSideBarController">
+
+
+
+    <div ng-show="logedIn" class="Card" style="padding: 20px;">
+        <div class="infoSideBar-user">
+            <img ng-src="{{user.user_img}}" class="avatar avatar-small">
+            <span style="margin-top: 5px">{{user.username}}</span>
+        </div>
+
+        <div>
+            这里还没想好放点啥
+        </div>
+
+    </div>
+
+    <div class="Card ForumItem">
+
+
+        <div class="announce-item" ng-repeat="announcement in announcements">
+            <div class="topic-title">
+                {{announcement.title}}
+            </div>
+            <div class="announce-item-main">
+                {{announcement.content}}
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+
