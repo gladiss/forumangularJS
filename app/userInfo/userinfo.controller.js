@@ -2,13 +2,13 @@
 angular.module("cambricon-forum").controller("userInfoController",
     ["$scope", "$stateParams", "$http", "toastr", "$state", "localStorageService", function ($scope, $stateParams, $http, toastr, $state, localStorageService) {
 
-        $("#userInfo").height(window.innerHeight*2);
+        $("#userInfo").height(window.innerHeight * 2);
 
         $scope.name = $stateParams.username;
         $scope.loginname = localStorageService.get("username");
 
         $scope.user = {};
-        $scope.userinfo = function(){
+        $scope.userinfo = function () {
             $("#myinfo").show();
             $("#myreply").hide();
             $("#myarticle").hide();
@@ -67,7 +67,7 @@ angular.module("cambricon-forum").controller("userInfoController",
             $scope.mytopiclist();
 
         };
-        $scope.toggleReply =function(){
+        $scope.toggleReply = function () {
             $("#person").removeClass("fontcolor");
             $("#subject").removeClass("fontcolor");
             $("#file").removeClass("fontcolor");
@@ -88,7 +88,7 @@ angular.module("cambricon-forum").controller("userInfoController",
                     }
                 });
         };
-        $scope.toggleFile =function(){
+        $scope.toggleFile = function () {
             $("#person").removeClass("fontcolor");
             $("#subject").removeClass("fontcolor");
             $("#reply").removeClass("fontcolor");
