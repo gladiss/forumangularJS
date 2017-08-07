@@ -2,21 +2,15 @@
 angular.module("cambricon-forum").controller("userInfoController",
     ["$scope", "$stateParams", "$http", "toastr", "$state", "localStorageService", function ($scope, $stateParams, $http, toastr, $state, localStorageService) {
 
-        $("#userInfo").height(window.innerHeight*2);
+        $("#userInfo").height(window.innerHeight);
 
         $scope.name = $stateParams.username;
         $scope.loginname = localStorageService.get("username");
 
         $scope.user = {};
-        $scope.userinfo = function(){
-            $("#myinfo").show();
-            $("#myreply").hide();
-            $("#myarticle").hide();
-            $("#myfile").hide();
-            $("#file").removeClass("fontcolor");
-            $("#reply").removeClass("fontcolor");
-            $("#subject").removeClass("fontcolor");
-            $("#person").addClass("fontcolor");
+        $scope.userinfo = function () {
+
+
             $http.post(SERVER_URL + "/users/getUserInfo", {"username": $stateParams["username"]})
                 .then(function (response) {
                     $scope.user = response.data;
@@ -38,9 +32,10 @@ angular.module("cambricon-forum").controller("userInfoController",
                     if (response.data.message == "OK") {
                         toastr.info("用户信息修改成功");
                         $scope.toggle();
-                        $scope.selectUserInfo();
+                        $scope.userinfo();
                     }
                 }).catch(function (error) {
+                        $scope.userinfo();
                 if (error.data) {
                     toastr.error(error.data.err);
                 } else {
@@ -56,26 +51,13 @@ angular.module("cambricon-forum").controller("userInfoController",
 
 
         $scope.toggleArticle = function () {
-            $("#myarticle").show();
-            $("#reply").removeClass("fontcolor");
-            $("#person").removeClass("fontcolor");
-            $("#file").removeClass("fontcolor");
-            $("#subject").addClass("fontcolor");
-            $("#myreply").hide();
-            $("#myinfo").hide();
-            $("#myfile").hide();
+
             $scope.mytopiclist();
 
         };
-        $scope.toggleReply =function(){
-            $("#person").removeClass("fontcolor");
-            $("#subject").removeClass("fontcolor");
-            $("#file").removeClass("fontcolor");
-            $("#reply").addClass("fontcolor");
-            $("#myreply").show();
-            $("#myarticle").hide();
-            $("#myinfo").hide();
-            $("#myfile").hide();
+        $scope.toggleReply = function () {
+
+
             $http.post(SERVER_URL + "/comment/getCommentByUser", {"username": $stateParams["username"]})
                 .then(function (response) {
                     $scope.replys = response.data;
@@ -88,15 +70,9 @@ angular.module("cambricon-forum").controller("userInfoController",
                     }
                 });
         };
-        $scope.toggleFile =function(){
-            $("#person").removeClass("fontcolor");
-            $("#subject").removeClass("fontcolor");
-            $("#reply").removeClass("fontcolor");
-            $("#file").addClass("fontcolor")
-            $("#myreply").hide();
-            $("#myarticle").hide();
-            $("#myinfo").hide();
-            $("#myfile").show();
+        $scope.toggleFile = function () {
+
+
             $http.post(SERVER_URL + "/file/getFileByUser", {"username": $stateParams["username"]})
                 .then(function (response) {
                     $scope.files = response.data;
@@ -125,6 +101,34 @@ angular.module("cambricon-forum").controller("userInfoController",
 
 
         };
+        $scope.userinfo();
         $scope.mytopiclist();
+        $scope.toggleFile();
+        $scope.toggleReply();
+
+
+
+        $scope.postImg = function(){
+
+
+
+                var reader= new FileReader();
+
+                var file =document.getElementById("inp").files[0];//获得input选择的图片文件
+
+                 reader.readAsDataURL(file);// base64 编码
+
+
+                reader.addEventListener("load", function(e) {
+
+                    document.getElementById("img").src  = e.target.result;
+                    $scope.user.user_img = e.target.result;
+
+                });
+
+
+
+        }
+
     }
     ]);
