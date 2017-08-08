@@ -126,25 +126,24 @@ a{
     padding: 5px 10px 10px;
 }
 
-span:hover{
+.hd span:hover{
     background-color: lightgray;
     cursor: pointer;
 }
-table {
+.userinfotab {
     border-collapse: collapse;
     border-spacing: 0;
     display: table;
     border-color: gray;
 }
-td, th {
-    display: table-cell;
-    vertical-align: inherit;
-}
+
 .myarticle .num {
     width: 80px;
 }
 
 .myarticle thead td {
+    display: table-cell;
+    vertical-align: inherit;
     padding: 5px 0 10px;
     color: #999;
 }
