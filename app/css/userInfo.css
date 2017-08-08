@@ -1,11 +1,4 @@
-td,th,div，nav{
-    word-break: break-all;
-    word-wrap: break-word;
-    display: block;
-}
-td{
-    height: 40px;
-}
+
 a{
     cursor: pointer;
 }
