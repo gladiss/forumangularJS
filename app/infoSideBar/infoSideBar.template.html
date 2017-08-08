@@ -5,7 +5,7 @@
     <div ng-show="logedIn" class="Card" style="padding: 20px;">
         <div class="infoSideBar-user">
             <img ng-src="{{user.user_img}}" class="avatar avatar-small">
-            <span style="margin-top: 5px">{{user.username}}</span>
+            <span style="margin-top: 5px" ui-sref="userInfo({'username':user.username})">{{user.username}}</span>
         </div>
 
         <div>

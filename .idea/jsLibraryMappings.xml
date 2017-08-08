@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$" libraries="{fruit-sales/node_modules}" />
-    <file url="PROJECT" libraries="{av-mini-0.6.4}" />
+    <file url="file://$PROJECT_DIR$" libraries="{cambricon-forum node_modules}" />
   </component>
 </project>
