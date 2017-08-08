@@ -25,7 +25,6 @@ angular.module("cambricon-forum").controller("userInfoController",
             $("#update").toggle();
         };
 
-
         $scope.update = function () {
             $http.post(SERVER_URL + "/users/updateUserInfo", $scope.user)
                 .then(function (response) {
@@ -49,82 +48,25 @@ angular.module("cambricon-forum").controller("userInfoController",
             $scope.selectUserInfo();
         };
 
-
-        $scope.toggleArticle = function () {
-
-            $scope.mytopiclist();
-
-        };
-        $scope.toggleReply = function () {
-
-
-            $http.post(SERVER_URL + "/comment/getCommentByUser", {"username": $stateParams["username"]})
-                .then(function (response) {
-                    $scope.replys = response.data;
-                })
-                .catch(function (error) {
-                    if (error.data) {
-                        toastr.error(error.data);
-                    } else {
-                        toastr.error("连接服务器失败!");
-                    }
-                });
-        };
-        $scope.toggleFile = function () {
-
-
-            $http.post(SERVER_URL + "/file/getFileByUser", {"username": $stateParams["username"]})
-                .then(function (response) {
-                    $scope.files = response.data;
-                })
-                .catch(function (error) {
-                    if (error.data) {
-                        toastr.error(error.data);
-                    } else {
-                        toastr.error("连接服务器失败!");
-                    }
-                });
-        };
-
-        $scope.mytopiclist = function () {
-            $http.post(SERVER_URL + "/forum/getForumByUser", {"username": $stateParams["username"]})
-                .then(function (response) {
-                    $scope.articles = response.data;
-                })
-                .catch(function (error) {
-                    if (error.data) {
-                        toastr.error(error.data.err);
-                    } else {
-                        toastr.error("连接服务器失败!");
-                    }
-                });
-
-
-        };
         $scope.userinfo();
-        $scope.mytopiclist();
-        $scope.toggleFile();
-        $scope.toggleReply();
-
-
 
         $scope.postImg = function(){
 
 
 
-                var reader= new FileReader();
+            var reader= new FileReader();
 
-                var file =document.getElementById("inp").files[0];//获得input选择的图片文件
+            var file =document.getElementById("inp").files[0];//获得input选择的图片文件
 
-                 reader.readAsDataURL(file);// base64 编码
+            reader.readAsDataURL(file);// base64 编码
 
 
-                reader.addEventListener("load", function(e) {
+            reader.addEventListener("load", function(e) {
 
-                    document.getElementById("img").src  = e.target.result;
-                    $scope.user.user_img = e.target.result;
+                document.getElementById("img").src  = e.target.result;
+                $scope.user.user_img = e.target.result;
 
-                });
+            });
 
 
 

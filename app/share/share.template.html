@@ -40,7 +40,7 @@
                 </div>
                 <div style="margin-bottom: 5px">
                     <img style="width: 35px;height: 35px;" ng-src="{{download.user.user_img}}">
-                    <span style="margin-left: 5px">{{download.username}}</span>
+                    <span style="margin-left: 5px" ui-sref="userInfo({'username':download.username})">{{download.username}}</span>
                     <a ng-show="download.username===username" style="float:right;margin-top: 8px;cursor: pointer;"
                        ng-click="openFileEditor(download)"> 编辑</a>
                 </div>

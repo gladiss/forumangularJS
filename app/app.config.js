@@ -28,15 +28,15 @@ angular.module("cambricon-forum").config(["$stateProvider", "$urlRouterProvider"
         }).state("myarticle", {
             url: "/myarticle/:username",
             templateUrl: "userInfo/myarticle.template.html",
-            controller: "userInfoController"
+            controller: "userArticleController"
         }).state("myreply", {
             url: "/myreply/:username",
             templateUrl: "userInfo/myreply.template.html",
-            controller: "userInfoController"
+            controller: "userReplyController"
         }).state("myfile", {
             url: "/myfile/:username",
             templateUrl: "userInfo/myfile.template.html",
-            controller: "userInfoController"
+            controller: "userFileController"
         }).state("cart", {
             url: "/cart",
             templateUrl: "cart/cart.template.html",

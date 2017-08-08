@@ -3,6 +3,9 @@ td,th,div，nav{
     word-wrap: break-word;
     display: block;
 }
+td{
+    height: 40px;
+}
 a{
     cursor: pointer;
 }
